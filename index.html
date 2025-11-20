@@ -210,14 +210,7 @@
             const dataParam = urlParams.get('data');
             
             if (dataParam) {
-                try {
-                    medicalData = JSON.parse(decodeURIComponent(dataParam));
-                    displayData();
-                    // Gerar PDF automaticamente após 1 segundo
-                    setTimeout(() => {
-                        generatePDF();
-                    }, 1000);
-                } catch (e) {
+                try { medicalData = JSON.parse(decodeURIComponent(dataParam)); displayData(); } catch (e) {
                     showError();
                 }
             } else {
@@ -712,14 +705,7 @@
             const dataParam = urlParams.get('data');
             
             if (dataParam) {
-                try {
-                    medicalData = JSON.parse(decodeURIComponent(dataParam));
-                    displayData();
-                    // Gerar PDF automaticamente após 1 segundo
-                    setTimeout(() => {
-                        generatePDF();
-                    }, 1000);
-                } catch (e) {
+                try { medicalData = JSON.parse(decodeURIComponent(dataParam)); displayData(); } catch (e) {
                     showError();
                 }
             } else {

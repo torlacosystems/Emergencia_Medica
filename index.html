@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -470,7 +471,7 @@
             const fileName = `EmergenciaMedica_${medicalData.fullName.replace(/\s+/g, '_')}_${Date.now()}.pdf`;
             doc.save(fileName);
             
-            alert('PDF baixado com sucesso! Verifique seus downloads.');
+            // PDF baixado
         }
 
         function callEmergency() {
@@ -499,3 +500,506 @@
     </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações de Emergência Médica</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .section-content {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .info-row {
+            margin: 8px 0;
+        }
+        
+        .label {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .blood-type {
+            color: #d32f2f;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .allergy {
+            color: #d32f2f;
+            font-weight: 600;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn:active {
+            transform: scale(0.98);
+        }
+        
+        .btn-pdf {
+            background: #d32f2f;
+            color: white;
+        }
+        
+        .btn-pdf:hover {
+            background: #b71c1c;
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+        }
+        
+        .btn-emergency {
+            background: #ff5722;
+            color: white;
+        }
+        
+        .btn-emergency:hover {
+            background: #e64a19;
+            box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
+        }
+        
+        .btn-share {
+            background: #2196F3;
+            color: white;
+        }
+        
+        .btn-share:hover {
+            background: #1976D2;
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🆘 Informações de Emergência Médica</h1>
+            <p>Dados médicos essenciais para atendimento de emergência</p>
+        </div>
+        
+        <div id="loading" class="loading">
+            <p>Carregando informações...</p>
+        </div>
+        
+        <div id="error" class="error" style="display: none;">
+            <strong>Erro:</strong> Não foi possível carregar as informações médicas.
+        </div>
+        
+        <div id="content" class="content" style="display: none;">
+            <!-- Conteúdo será preenchido dinamicamente -->
+        </div>
+    </div>
+
+    <script>
+        let medicalData = null;
+
+        // Decodificar dados do URL
+        function loadDataFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const dataParam = urlParams.get('data');
+            
+            if (dataParam) {
+                try {
+                    medicalData = JSON.parse(decodeURIComponent(dataParam));
+                    displayData();
+                    // Gerar PDF automaticamente após 1 segundo
+                    setTimeout(() => {
+                        generatePDF();
+                    }, 1000);
+                } catch (e) {
+                    showError();
+                }
+            } else {
+                showError();
+            }
+        }
+
+        function showError() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+        }
+
+        function displayData() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            
+            const content = document.getElementById('content');
+            let html = '';
+
+            // Dados Pessoais
+            html += `<div class="section">
+                <div class="section-title">👤 Dados Pessoais</div>
+                <div class="section-content">
+                    <div class="info-row"><span class="label">Nome:</span> ${medicalData.fullName || 'N/A'}</div>
+                    <div class="info-row"><span class="label">Idade:</span> ${medicalData.age || 0} anos</div>
+                    ${medicalData.bloodType ? `<div class="info-row"><span class="label">Tipo Sanguíneo:</span> <span class="blood-type">🩸 ${medicalData.bloodType}</span></div>` : ''}
+                </div>
+            </div>`;
+
+            // Condições Pré-existentes
+            if (medicalData.preExistingConditions) {
+                html += `<div class="section">
+                    <div class="section-title">🏥 Condições Pré-existentes</div>
+                    <div class="section-content">${medicalData.preExistingConditions}</div>
+                </div>`;
+            }
+
+            // Medicações
+            if (medicalData.currentMedications) {
+                html += `<div class="section">
+                    <div class="section-title">💊 Medicações em Uso</div>
+                    <div class="section-content">${medicalData.currentMedications}</div>
+                </div>`;
+            }
+
+            // Alergias
+            if (medicalData.allergies) {
+                html += `<div class="section">
+                    <div class="section-title">⚠️ Alergias</div>
+                    <div class="section-content allergy">${medicalData.allergies}</div>
+                </div>`;
+            }
+
+            // Dispositivos/Implantes
+            if (medicalData.hasPacemaker || medicalData.hasImplants) {
+                html += `<div class="section">
+                    <div class="section-title">⚡ Dispositivos/Implantes</div>
+                    <div class="section-content">`;
+                if (medicalData.hasPacemaker) {
+                    html += `<div class="info-row">• Marca-passo instalado</div>`;
+                }
+                if (medicalData.hasImplants) {
+                    html += `<div class="info-row">• ${medicalData.hasImplants}</div>`;
+                }
+                html += `</div></div>`;
+            }
+
+            // Contatos de Emergência
+            if (medicalData.emergencyContact1Name || medicalData.emergencyContact2Name) {
+                html += `<div class="section">
+                    <div class="section-title">📞 Contatos de Emergência</div>
+                    <div class="section-content">`;
+                if (medicalData.emergencyContact1Name) {
+                    html += `<div class="info-row">1. ${medicalData.emergencyContact1Name} - <a href="tel:${medicalData.emergencyContact1Phone}">${medicalData.emergencyContact1Phone}</a></div>`;
+                }
+                if (medicalData.emergencyContact2Name) {
+                    html += `<div class="info-row">2. ${medicalData.emergencyContact2Name} - <a href="tel:${medicalData.emergencyContact2Phone}">${medicalData.emergencyContact2Phone}</a></div>`;
+                }
+                html += `</div></div>`;
+            }
+
+            // Observações
+            if (medicalData.additionalNotes) {
+                html += `<div class="section">
+                    <div class="section-title">📝 Observações Adicionais</div>
+                    <div class="section-content">${medicalData.additionalNotes}</div>
+                </div>`;
+            }
+
+            // Botões
+            html += `<div class="buttons">
+                <button class="btn btn-pdf" onclick="generatePDF()">📄 Baixar PDF</button>
+                <button class="btn btn-emergency" onclick="callEmergency()">🚑 Ligar 192</button>
+                <button class="btn btn-share" onclick="shareData()">📤 Compartilhar</button>
+            </div>`;
+
+            content.innerHTML = html;
+        }
+
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            let y = 20;
+            const lineHeight = 7;
+            const margin = 20;
+            const pageWidth = doc.internal.pageSize.width;
+
+            // Título
+            doc.setFontSize(18);
+            doc.setTextColor(211, 47, 47);
+            doc.setFont(undefined, 'bold');
+            doc.text('INFORMAÇÕES DE EMERGÊNCIA MÉDICA', pageWidth/2, y, { align: 'center' });
+            
+            y += 15;
+            doc.setFontSize(10);
+            doc.setTextColor(100, 100, 100);
+            const now = new Date();
+            doc.text(`Gerado em: ${now.toLocaleDateString('pt-BR')} ${now.toLocaleTimeString('pt-BR')}`, margin, y);
+            
+            y += 10;
+            doc.setLineWidth(0.5);
+            doc.line(margin, y, pageWidth - margin, y);
+            y += 10;
+
+            // Dados Pessoais
+            doc.setFontSize(14);
+            doc.setTextColor(0, 0, 0);
+            doc.setFont(undefined, 'bold');
+            doc.text('DADOS PESSOAIS', margin, y);
+            y += lineHeight;
+            
+            doc.setFontSize(11);
+            doc.setFont(undefined, 'normal');
+            doc.text(`Nome: ${medicalData.fullName || 'N/A'}`, margin, y);
+            y += lineHeight;
+            doc.text(`Idade: ${medicalData.age || 0} anos`, margin, y);
+            y += lineHeight;
+            
+            if (medicalData.bloodType) {
+                doc.setTextColor(211, 47, 47);
+                doc.setFont(undefined, 'bold');
+                doc.text(`Tipo Sanguíneo: ${medicalData.bloodType}`, margin, y);
+                y += lineHeight + 3;
+                doc.setTextColor(0, 0, 0);
+                doc.setFont(undefined, 'normal');
+            }
+
+            // Condições Pré-existentes
+            if (medicalData.preExistingConditions) {
+                y += 5;
+                doc.setFontSize(14);
+                doc.setFont(undefined, 'bold');
+                doc.text('CONDIÇÕES PRÉ-EXISTENTES', margin, y);
+                y += lineHeight;
+                
+                doc.setFontSize(11);
+                doc.setFont(undefined, 'normal');
+                const conditionsLines = doc.splitTextToSize(medicalData.preExistingConditions, pageWidth - 2*margin);
+                doc.text(conditionsLines, margin, y);
+                y += conditionsLines.length * lineHeight + 3;
+            }
+
+            // Medicações
+            if (medicalData.currentMedications) {
+                y += 5;
+                doc.setFontSize(14);
+                doc.setFont(undefined, 'bold');
+                doc.text('MEDICAÇÕES EM USO', margin, y);
+                y += lineHeight;
+                
+                doc.setFontSize(11);
+                doc.setFont(undefined, 'normal');
+                const medicationsLines = doc.splitTextToSize(medicalData.currentMedications, pageWidth - 2*margin);
+                doc.text(medicationsLines, margin, y);
+                y += medicationsLines.length * lineHeight + 3;
+            }
+
+            // Alergias
+            if (medicalData.allergies) {
+                y += 5;
+                doc.setFontSize(14);
+                doc.setTextColor(211, 47, 47);
+                doc.setFont(undefined, 'bold');
+                doc.text('ALERGIAS', margin, y);
+                y += lineHeight;
+                
+                doc.setFontSize(11);
+                const allergiesLines = doc.splitTextToSize(medicalData.allergies, pageWidth - 2*margin);
+                doc.text(allergiesLines, margin, y);
+                y += allergiesLines.length * lineHeight + 3;
+                doc.setTextColor(0, 0, 0);
+                doc.setFont(undefined, 'normal');
+            }
+
+            // Dispositivos/Implantes
+            if (medicalData.hasPacemaker || medicalData.hasImplants) {
+                y += 5;
+                doc.setFontSize(14);
+                doc.setFont(undefined, 'bold');
+                doc.text('DISPOSITIVOS/IMPLANTES', margin, y);
+                y += lineHeight;
+                
+                doc.setFontSize(11);
+                doc.setFont(undefined, 'normal');
+                if (medicalData.hasPacemaker) {
+                    doc.text('• Marca-passo instalado', margin, y);
+                    y += lineHeight;
+                }
+                if (medicalData.hasImplants) {
+                    doc.text(`• ${medicalData.hasImplants}`, margin, y);
+                    y += lineHeight + 3;
+                }
+            }
+
+            // Contatos de Emergência
+            if (medicalData.emergencyContact1Name || medicalData.emergencyContact2Name) {
+                y += 5;
+                doc.setFontSize(14);
+                doc.setFont(undefined, 'bold');
+                doc.text('CONTATOS DE EMERGÊNCIA', margin, y);
+                y += lineHeight;
+                
+                doc.setFontSize(11);
+                doc.setFont(undefined, 'normal');
+                if (medicalData.emergencyContact1Name) {
+                    doc.text(`1. ${medicalData.emergencyContact1Name} - ${medicalData.emergencyContact1Phone}`, margin, y);
+                    y += lineHeight;
+                }
+                if (medicalData.emergencyContact2Name) {
+                    doc.text(`2. ${medicalData.emergencyContact2Name} - ${medicalData.emergencyContact2Phone}`, margin, y);
+                    y += lineHeight + 3;
+                }
+            }
+
+            // Observações
+            if (medicalData.additionalNotes) {
+                y += 5;
+                doc.setFontSize(14);
+                doc.setFont(undefined, 'bold');
+                doc.text('OBSERVAÇÕES ADICIONAIS', margin, y);
+                y += lineHeight;
+                
+                doc.setFontSize(11);
+                doc.setFont(undefined, 'normal');
+                const notesLines = doc.splitTextToSize(medicalData.additionalNotes, pageWidth - 2*margin);
+                doc.text(notesLines, margin, y);
+            }
+
+            // Salvar PDF
+            const fileName = `EmergenciaMedica_${medicalData.fullName.replace(/\s+/g, '_')}_${Date.now()}.pdf`;
+            doc.save(fileName);
+            
+            // PDF baixado
+        }
+
+        function callEmergency() {
+            window.location.href = 'tel:192';
+        }
+
+        function shareData() {
+            const text = `Informações Médicas de Emergência\n\nNome: ${medicalData.fullName}\nTipo Sanguíneo: ${medicalData.bloodType}\n\nAbra o link para mais detalhes.`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Informações de Emergência Médica',
+                    text: text,
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                // Fallback: copiar link
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('Link copiado para a área de transferência!');
+                });
+            }
+        }
+
+        // Carregar dados ao abrir a página
+        window.onload = loadDataFromURL;
+    </script>
+</body>
+</html>
+>>>>>>> 54b8a7aa2100acd6e69cd4885de4105dc4f02637

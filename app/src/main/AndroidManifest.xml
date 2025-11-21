@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true">
+
+        <activity android:name=".MainActivity" 
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MedicalFormActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="Dados de Emergência" />
+
+        <activity android:name=".QRCodeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="QR Code de Emergência" />
+
+        <activity android:name=".ScanQRCodeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="Escanear QR Code" />
+
+        <!-- Atividade de Tela de Bloqueio -->
+        <activity android:name=".LockScreenActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:label="Emergência Médica"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- Atividade de Criação de Atalho -->
+        <activity android:name=".ShortcutActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="Criar Atalho" />
+
+        <!-- Serviço de Acessibilidade para Volume Down 3x -->
+        <service
+            android:name=".EmergencyAccessibilityService"
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <!-- Serviço de Notificação Persistente -->
+        <service
+            android:name=".EmergencyNotificationService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+        </service>
+
+        <!-- Widget de Emergência -->
+        <receiver android:name=".EmergencyWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+        <!-- FileProvider para compartilhar PDFs -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

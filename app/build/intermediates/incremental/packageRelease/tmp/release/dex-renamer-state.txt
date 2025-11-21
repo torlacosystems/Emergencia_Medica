@@ -1,0 +1,4 @@
+#Thu Nov 20 22:07:56 BRT 2025
+base.0=C\:\\workspace\\emergencia-medica-app\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

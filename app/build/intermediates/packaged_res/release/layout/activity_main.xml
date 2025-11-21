@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Tela de Boas-vindas -->
+        <LinearLayout
+            android:id="@+id/welcomeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🆘"
+                android:textSize="72sp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Emergência Médica"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Configure suas informações médicas de emergência para acesso rápido em situações críticas."
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="32dp"
+                android:paddingHorizontal="24dp"/>
+
+            <Button
+                android:id="@+id/btnStartSetup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Configurar Agora"
+                android:textSize="18sp"
+                android:padding="16dp"
+                android:layout_marginHorizontal="24dp"/>
+
+        </LinearLayout>
+
+        <!-- Menu Principal -->
+        <LinearLayout
+            android:id="@+id/mainMenuLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/userInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="👤 Nome do Usuário\n🩸 Tipo Sanguíneo"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="16dp"
+                android:background="#E3F2FD"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ações Rápidas"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnEmergencyCall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🚑 LIGAR PARA EMERGÊNCIA (192)"
+                android:textSize="16sp"
+                android:padding="16dp"
+                android:backgroundTint="#D32F2F"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnViewQRCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📱 Ver Meu QR Code"
+                android:textSize="16sp"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnScanQRCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📷 Escanear QR Code"
+                android:textSize="16sp"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnLockScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔒 QR Code Tela Bloqueio"
+                android:textSize="16sp"
+                android:padding="16dp"
+                android:backgroundTint="#FF5722"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnCreateShortcut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚡ Acesso Rápido Emergência"
+                android:textSize="16sp"
+                android:padding="16dp"
+                android:backgroundTint="#4CAF50"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnEditData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✏️ Editar Meus Dados"
+                android:textSize="16sp"
+                android:padding="16dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

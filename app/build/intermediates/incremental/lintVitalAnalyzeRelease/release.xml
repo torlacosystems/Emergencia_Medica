@@ -1,0 +1,39 @@
+<variant
+    name="release"
+    package="com.emergencia.medica"
+    minSdkVersion="23"
+    targetSdkVersion="34"
+    shrinking="true"
+    mergedManifest="build\intermediates\merged_manifest\release\AndroidManifest.xml"
+    proguardFiles="build\intermediates\default_proguard_files\global\proguard-android-optimize.txt-8.1.0;proguard-rules.pro"
+    partialResultsDir="build\intermediates\lint_vital_partial_results\release\out"
+    desugaredMethodsFiles="C:\Users\julio\.gradle\caches\transforms-3\6efe2dc588d2480baeddba5e3b4efb05\transformed\D8BackportedDesugaredMethods.txt">
+  <buildFeatures
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+    <sourceProvider
+        manifests="src\main\AndroidManifest.xml"
+        javaDirectories="src\main\java;src\release\java;src\main\kotlin;src\release\kotlin"
+        resDirectories="src\main\res;src\release\res"
+        assetsDirectories="src\main\assets;src\release\assets"/>
+  </sourceProviders>
+  <testSourceProviders>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <manifestPlaceholders>
+    <placeholder
+        name="appDescription"
+        value="Informações médicas para emergências" />
+    <placeholder
+        name="appName"
+        value="Emergência Médica" />
+  </manifestPlaceholders>
+  <mainArtifact
+      classOutputs="build\intermediates\javac\release\classes;build\tmp\kotlin-classes\release;build\kotlinToolingMetadata;build\intermediates\compile_and_runtime_not_namespaced_r_class_jar\release\R.jar"
+      applicationId="com.emergencia.medica"
+      generatedSourceFolders="build\generated\ap_generated_sources\release\out"
+      generatedResourceFolders="build\generated\res\resValues\release"
+      desugaredMethodsFiles="C:\Users\julio\.gradle\caches\transforms-3\6efe2dc588d2480baeddba5e3b4efb05\transformed\D8BackportedDesugaredMethods.txt">
+  </mainArtifact>
+</variant>

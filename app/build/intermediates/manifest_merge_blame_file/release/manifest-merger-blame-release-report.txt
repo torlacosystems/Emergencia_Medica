@@ -1,0 +1,357 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.emergencia.medica"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.CAMERA" />
+11-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:4:5-65
+11-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:4:22-62
+12    <uses-permission android:name="android.permission.VIBRATE" />
+12-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:5:5-66
+12-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:5:22-63
+13    <uses-permission
+13-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:6:5-108
+14        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+14-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:6:22-78
+15        android:maxSdkVersion="28" />
+15-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:6:79-105
+16    <uses-permission
+16-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:7:5-107
+17        android:name="android.permission.READ_EXTERNAL_STORAGE"
+17-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:7:22-77
+18        android:maxSdkVersion="32" />
+18-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:7:78-104
+19    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+19-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:8:5-76
+19-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:8:22-73
+20    <uses-permission android:name="android.permission.WAKE_LOCK" />
+20-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:9:5-68
+20-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:9:22-65
+21    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+21-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:10:5-75
+21-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:10:22-72
+22    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+22-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:11:5-81
+22-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:11:22-78
+23    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+23-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:12:5-77
+23-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:12:22-74
+24    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+24-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:13:5-77
+24-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:13:22-74
+25    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+25-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:14:5-88
+25-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:14:22-85
+26    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
+26-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:15:5-85
+26-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:15:22-82
+27
+28    <permission
+28-->[androidx.core:core:1.12.0] C:\Users\julio\.gradle\caches\transforms-3\caf3f4ac969f873012968430e69f5484\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+29        android:name="com.emergencia.medica.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+29-->[androidx.core:core:1.12.0] C:\Users\julio\.gradle\caches\transforms-3\caf3f4ac969f873012968430e69f5484\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+30        android:protectionLevel="signature" />
+30-->[androidx.core:core:1.12.0] C:\Users\julio\.gradle\caches\transforms-3\caf3f4ac969f873012968430e69f5484\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+31
+32    <uses-permission android:name="com.emergencia.medica.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+32-->[androidx.core:core:1.12.0] C:\Users\julio\.gradle\caches\transforms-3\caf3f4ac969f873012968430e69f5484\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+32-->[androidx.core:core:1.12.0] C:\Users\julio\.gradle\caches\transforms-3\caf3f4ac969f873012968430e69f5484\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+33    <uses-feature
+33-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
+34        android:name="android.hardware.camera"
+34-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:26:9-47
+35        android:required="false" />
+35-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:27:9-33
+36    <uses-feature
+36-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
+37        android:name="android.hardware.camera.front"
+37-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
+38        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+38-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
+39    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+40    <uses-feature
+40-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
+41        android:name="android.hardware.camera.autofocus"
+41-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:34:9-57
+42        android:required="false" />
+42-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:35:9-33
+43    <uses-feature
+43-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
+44        android:name="android.hardware.camera.flash"
+44-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
+45        android:required="false" />
+45-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
+46    <uses-feature
+46-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
+47        android:name="android.hardware.screen.landscape"
+47-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
+48        android:required="false" />
+48-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
+49    <uses-feature
+49-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
+50        android:name="android.hardware.wifi"
+50-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
+51        android:required="false" />
+51-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
+52
+53    <application
+53-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:17:5-107:19
+54        android:allowBackup="true"
+54-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:18:9-35
+55        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+55-->[androidx.core:core:1.12.0] C:\Users\julio\.gradle\caches\transforms-3\caf3f4ac969f873012968430e69f5484\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+56        android:extractNativeLibs="false"
+57        android:icon="@mipmap/ic_launcher"
+57-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:19:9-43
+58        android:label="@string/app_name"
+58-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:21:9-41
+59        android:requestLegacyExternalStorage="true"
+59-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:24:9-52
+60        android:roundIcon="@mipmap/ic_launcher_round"
+60-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:20:9-54
+61        android:supportsRtl="true"
+61-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:23:9-35
+62        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+62-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:22:9-67
+63        <activity
+63-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:26:9-33:20
+64            android:name="com.emergencia.medica.MainActivity"
+64-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:26:19-47
+65            android:exported="true"
+65-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:27:13-36
+66            android:screenOrientation="portrait" >
+66-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:28:13-49
+67            <intent-filter>
+67-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:29:13-32:29
+68                <action android:name="android.intent.action.MAIN" />
+68-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:30:17-69
+68-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:30:25-66
+69
+70                <category android:name="android.intent.category.LAUNCHER" />
+70-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:31:17-77
+70-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:31:27-74
+71            </intent-filter>
+72        </activity>
+73        <activity
+73-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:35:9-38:51
+74            android:name="com.emergencia.medica.MedicalFormActivity"
+74-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:35:19-54
+75            android:exported="false"
+75-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:36:13-37
+76            android:label="Dados de Emergência"
+76-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:38:13-48
+77            android:screenOrientation="portrait" />
+77-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:37:13-49
+78        <activity
+78-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:40:9-43:53
+79            android:name="com.emergencia.medica.QRCodeActivity"
+79-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:40:19-49
+80            android:exported="false"
+80-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:41:13-37
+81            android:label="QR Code de Emergência"
+81-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:43:13-50
+82            android:screenOrientation="portrait" />
+82-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:42:13-49
+83        <activity
+83-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:45:9-48:48
+84            android:name="com.emergencia.medica.ScanQRCodeActivity"
+84-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:45:19-53
+85            android:exported="false"
+85-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:46:13-37
+86            android:label="Escanear QR Code"
+86-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:48:13-45
+87            android:screenOrientation="portrait" />
+87-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:47:13-49
+88
+89        <!-- Atividade de Tela de Bloqueio -->
+90        <activity
+90-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:51:9-57:72
+91            android:name="com.emergencia.medica.LockScreenActivity"
+91-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:51:19-53
+92            android:exported="true"
+92-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:52:13-36
+93            android:label="Emergência Médica"
+93-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:54:13-46
+94            android:screenOrientation="portrait"
+94-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:53:13-49
+95            android:showWhenLocked="true"
+95-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:55:13-42
+96            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+96-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:57:13-69
+97            android:turnScreenOn="true" />
+97-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:56:13-40
+98
+99        <!-- Atividade de Criação de Atalho -->
+100        <activity
+100-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:60:9-63:44
+101            android:name="com.emergencia.medica.ShortcutActivity"
+101-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:60:19-51
+102            android:exported="false"
+102-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:61:13-37
+103            android:label="Criar Atalho"
+103-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:63:13-41
+104            android:screenOrientation="portrait" />
+104-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:62:13-49
+105
+106        <!-- Serviço de Acessibilidade para Volume Down 3x -->
+107        <service
+107-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:66:9-76:19
+108            android:name="com.emergencia.medica.EmergencyAccessibilityService"
+108-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:67:13-58
+109            android:exported="true"
+109-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:68:13-36
+110            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+110-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:69:13-79
+111            <intent-filter>
+111-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:70:13-72:29
+112                <action android:name="android.accessibilityservice.AccessibilityService" />
+112-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:71:17-92
+112-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:71:25-89
+113            </intent-filter>
+114
+115            <meta-data
+115-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:73:13-75:72
+116                android:name="android.accessibilityservice"
+116-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:74:17-60
+117                android:resource="@xml/accessibility_service_config" />
+117-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:75:17-69
+118        </service>
+119
+120        <!-- Serviço de Notificação Persistente -->
+121        <service
+121-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:79:9-83:19
+122            android:name="com.emergencia.medica.EmergencyNotificationService"
+122-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:80:13-57
+123            android:exported="false"
+123-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:81:13-37
+124            android:foregroundServiceType="specialUse" >
+124-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:82:13-55
+125        </service>
+126
+127        <!-- Widget de Emergência -->
+128        <receiver
+128-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:86:9-94:20
+129            android:name="com.emergencia.medica.EmergencyWidget"
+129-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:86:19-50
+130            android:exported="true" >
+130-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:87:13-36
+131            <intent-filter>
+131-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:88:13-90:29
+132                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+132-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:89:17-84
+132-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:89:25-81
+133            </intent-filter>
+134
+135            <meta-data
+135-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:91:13-93:55
+136                android:name="android.appwidget.provider"
+136-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:92:17-58
+137                android:resource="@xml/widget_info" />
+137-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:93:17-52
+138        </receiver>
+139
+140        <!-- FileProvider para compartilhar PDFs -->
+141        <provider
+142            android:name="androidx.core.content.FileProvider"
+142-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:98:13-62
+143            android:authorities="com.emergencia.medica.fileprovider"
+143-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:99:13-64
+144            android:exported="false"
+144-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:100:13-37
+145            android:grantUriPermissions="true" >
+145-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:101:13-47
+146            <meta-data
+146-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:102:13-104:54
+147                android:name="android.support.FILE_PROVIDER_PATHS"
+147-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:103:17-67
+148                android:resource="@xml/file_paths" />
+148-->C:\workspace\emergencia-medica-app\app\src\main\AndroidManifest.xml:104:17-51
+149        </provider>
+150        <provider
+150-->[androidx.emoji2:emoji2:1.2.0] C:\Users\julio\.gradle\caches\transforms-3\8ded266165cc1b8724c0b62c5ac18964\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+151            android:name="androidx.startup.InitializationProvider"
+151-->[androidx.emoji2:emoji2:1.2.0] C:\Users\julio\.gradle\caches\transforms-3\8ded266165cc1b8724c0b62c5ac18964\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+152            android:authorities="com.emergencia.medica.androidx-startup"
+152-->[androidx.emoji2:emoji2:1.2.0] C:\Users\julio\.gradle\caches\transforms-3\8ded266165cc1b8724c0b62c5ac18964\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+153            android:exported="false" >
+153-->[androidx.emoji2:emoji2:1.2.0] C:\Users\julio\.gradle\caches\transforms-3\8ded266165cc1b8724c0b62c5ac18964\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+154            <meta-data
+154-->[androidx.emoji2:emoji2:1.2.0] C:\Users\julio\.gradle\caches\transforms-3\8ded266165cc1b8724c0b62c5ac18964\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+155                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+155-->[androidx.emoji2:emoji2:1.2.0] C:\Users\julio\.gradle\caches\transforms-3\8ded266165cc1b8724c0b62c5ac18964\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+156                android:value="androidx.startup" />
+156-->[androidx.emoji2:emoji2:1.2.0] C:\Users\julio\.gradle\caches\transforms-3\8ded266165cc1b8724c0b62c5ac18964\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+157            <meta-data
+157-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\julio\.gradle\caches\transforms-3\324b3eb7787717ddf44af5fc1e12a7bd\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+158                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+158-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\julio\.gradle\caches\transforms-3\324b3eb7787717ddf44af5fc1e12a7bd\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+159                android:value="androidx.startup" />
+159-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\julio\.gradle\caches\transforms-3\324b3eb7787717ddf44af5fc1e12a7bd\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+160            <meta-data
+160-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+161                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+162                android:value="androidx.startup" />
+162-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+163        </provider>
+164
+165        <receiver
+165-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+166            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+166-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+167            android:directBootAware="false"
+167-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+168            android:enabled="true"
+168-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+169            android:exported="true"
+169-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+170            android:permission="android.permission.DUMP" >
+170-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+171            <intent-filter>
+171-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+172                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+172-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+172-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+173            </intent-filter>
+174            <intent-filter>
+174-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+175                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+175-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+175-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+176            </intent-filter>
+177            <intent-filter>
+177-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+178                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+178-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+178-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+179            </intent-filter>
+180            <intent-filter>
+180-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+181                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+181-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+181-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\julio\.gradle\caches\transforms-3\b8fb84f1516cfd9e5a8dd896dad0f64c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+182            </intent-filter>
+183        </receiver>
+184
+185        <activity
+185-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
+186            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+186-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74
+187            android:clearTaskOnLaunch="true"
+187-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
+188            android:screenOrientation="sensorLandscape"
+188-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
+189            android:stateNotNeeded="true"
+189-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
+190            android:theme="@style/zxing_CaptureTheme"
+190-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
+191            android:windowSoftInputMode="stateAlwaysHidden" />
+191-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\julio\.gradle\caches\transforms-3\079694ab96d436b9f5f0c4a4c5dda205\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
+192    </application>
+193
+194</manifest>
